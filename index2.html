@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Energía Solar</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+
+/* Imagen de fondo para todo el cuerpo */
+body {
+  background-image: url('fondopagina2.png'); /* Reemplaza 'fondo.jpg' con el nombre de tu imagen */
+  background-size: cover; /* Hace que la imagen cubra todo el fondo */
+  background-attachment: fixed; /* Fija la imagen mientras haces scroll */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  color: #ffffff; /* Color de texto blanco para mejor contraste */
+}
+
+/* Estilo para el cuadro de texto flotante */
+.floating-text {
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0px 4px 20px rgba(255, 165, 0, 0.8); /* Sombra color naranja */
+  padding: 10px; /* Espaciado interno */
+  margin-top: 10px; /* Espacio superior */
+  max-width: 850px; /* Ancho máximo */
+  margin-left: 380px; 
+  margin-right: auto;
+  font-size: 1.1em; /* Tamaño de fuente */
+  line-height: 1.8em; /* Altura de línea para mejorar la legibilidad */
+}
+
+/* Estilo para la tabla */
+.table-container {
+  max-width: 600px;
+  margin: 20px auto;
+  margin-left: 500px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+th, td {
+  padding: 8px;
+  text-align: center;
+  background-color: #f2f2f2;
+  color: black;
+}
+
+th {
+  background-color: #f7d700;
+}
+
+</style>
+</head>
+<body class="w3-white">
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-yellow w3-large" style="z-index:4">
+  <img src="panel-solar.png" alt="Logo" style="height:40px; margin-left:1045px;">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();">
+    <i class="fa fa-bars"></i> &nbsp;Menu
+  </button>
+  <span class="w3-bar-item w3-right"><strong>Trabajo Final Talento Tech 2</strong></span>
+</div>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-light-grey w3-animate-left" style="z-index:3;width:280px;height:100vh;overflow-y:auto;" id="mySidebar">
+  <hr>
+  <div>
+     <a href="index.html" class="w3-bar-item w3-button w3-padding">
+      <i class="fa fa-users fa-fw"></i>&nbsp;Nuestro Grupo
+    </a><br>
+    <a href="index1.html" class="w3-bar-item w3-button w3-padding">
+      <i class="fa fa-sun-o fa-fw"></i>&nbsp;¿Qué es la energía solar?
+    </a><br>
+    <a href="index2.html" class="w3-bar-item w3-button w3-padding">
+      <i class="fa fa-bar-chart fa-fw"></i>&nbsp;Datos históricos
+    </a><br>
+    <a href="index3.html" class="w3-bar-item w3-button w3-padding">
+      <i class="fa fa-percent fa-fw"></i>&nbsp;Porcentaje energía renovable
+    </a><br>
+    <a href="index4.html" class="w3-bar-item w3-button w3-padding">
+      <i class="fa fa-industry fa-fw"></i>&nbsp;Producción por fuente
+    </a><br>
+    <a href="index5.html" class="w3-bar-item w3-button w3-padding">
+      <i class="fa fa-globe fa-fw"></i>&nbsp;Participación energías renovables
+    </a><br>
+    <a href="index6.html" class="w3-bar-item w3-button w3-padding">
+      <i class="fa fa-line-chart fa-fw"></i>&nbsp;Tendencia capacidad instalada
+    </a><br>
+    <a href="index7.html" class="w3-bar-item w3-button w3-padding">
+      <i class="fa fa-balance-scale fa-fw"></i>&nbsp;Comparación energía <br>renovable y convencional
+    </a><br>
+    <a href="index8.html" class="w3-bar-item w3-button w3-padding">
+      <i class="fa fa-thumbs-up fa-fw"></i>&nbsp;Agradecimiento
+    </a><br>
+  </div>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:250px;margin-top:43px;">
+  <!-- Header -->
+  <header class="w3-container" style="padding-top:22px">
+    <center><h1><strong>Consumo de energía solar en Colombia de 1965 a 2022</strong></h1></center>
+  </header>  
+</div>
+
+<!-- Cuadro de texto flotante debajo del título -->
+<div class="floating-text">
+  <Center>
+  <p>
+    La generación solar en Colombia muestra una tendencia positiva desde 2018, con una curva de crecimiento exponencial en los últimos años. Este cambio resalta una transición hacia fuentes renovables como parte de su matriz energética.  Si esta tendencia de crecimiento continúa, se espera que la energía solar siga ganando relevancia en la matriz energética del país. Podría superar 1 TWh en los próximos años, contribuyendo significativamente a los objetivos de sostenibilidad y reducción de emisiones.
+  </p>
+  </Center>
+</div>
+
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Entity</th>
+        <th>Code</th>
+        <th>Year</th>
+        <th>Electricity from solar (TWh)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Colombia</td><td>COL</td><td>1965</td><td>0</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>1966</td><td>0</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>1967</td><td>0</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>1968</td><td>0</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>1969</td><td>0</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>1970</td><td>0</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>1971</td><td>0</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>1972</td><td>0</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>1973</td><td>0</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>1974</td><td>0</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>1975</td><td>0</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>1976</td><td>0</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>1977</td><td>0</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>1978</td><td>0</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>1979</td><td>0</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>1980</td><td>0</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>1981</td><td>0</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>1982</td><td>0</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>1983</td><td>0</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>1984</td><td>0</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>1985</td><td>0</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>1986</td><td>0</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>1987</td><td>0</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>1988</td><td>0</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>1989</td><td>0</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>1990</td><td>0</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>1991</td><td>0</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>1992</td><td>0</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>1993</td><td>0</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>1994</td><td>0</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>1995</td><td>0</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>1996</td><td>0</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>1997</td><td>0</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>1998</td><td>0</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>1999</td><td>0</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>2000</td><td>0.01</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>2001</td><td>0.01</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>2002</td><td>0.01</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>2003</td><td>0.01</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>2004</td><td>0.01</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>2005</td><td>0.01</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>2006</td><td>0.01</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>2007</td><td>0.01</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>2008</td><td>0.01</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>2009</td><td>0.01</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>2010</td><td>0.01</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>2011</td><td>0.01</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>2012</td><td>0.01</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>2013</td><td>0.01</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>2014</td><td>0.01</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>2015</td><td>0.01</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>2016</td><td>0.01</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>2017</td><td>0.01</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>2018</td><td>0.02</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>2019</td><td>0.13</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>2020</td><td>0.19</td></tr>
+      <tr><td>Colombia</td><td>COL</td><td>2021</td><td>0.32</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<script>
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+
+</body>
+</html>

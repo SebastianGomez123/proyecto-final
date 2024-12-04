@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Consumo Eléctrico</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+    </style>
+    <style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #046daa;
+  color: white;
+}
+</style>
+</head>
+<body class="w3-light-grey">
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i> &nbsp;Menu</button>
+  <span class="w3-bar-item w3-right">Logo</span>
+</div>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container w3-row">
+    <div class="w3-col s4">
+      <img src="/w3images/avatar2.png" class="w3-circle w3-margin-right" style="width:46px">
+    </div>
+    <div class="w3-col s8 w3-bar">
+      <span>Welcome, <strong>Mike</strong></span><br>
+      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
+      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
+      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
+    </div>
+  </div>
+  <hr>
+  <div class="w3-container">
+    <h5>Dashboard</h5>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>&nbsp; Close Menu</a>
+    <a href="index.html" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>&nbsp;Inicio</a><br>
+    <a href="index2.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>Datos historicos</a><br>
+    <a href="index3.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>Porcentaje <br>energia renovable</a><br>
+    <a href="index4.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i>Produccion por fuente</a><br>
+    <a href="index5.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-diamond fa-fw"></i>Participacion de energias renovables</a><br>
+    <a href="index6.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bell fa-fw"></i>tendencia en la capacidad instalada</a><br>
+    <a href="index7.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>Comparacion en energia renovable y conveniciona</a><br>
+    <a href="index8.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-history fa-fw"></i>Contactenos y Agradecimiento</a><br>
+  </div>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+
+  <!-- Header -->
+  <header class="w3-container" style="padding-top:22px">
+    <h5><b><i class="fa fa-dashboard"></i> Proyecto energía Solar Talentotech2 Grupo FX4</b></h5>
+    <h1>Porcentaje de energía responsable</h1>
+<p>El porcentaje de energía responsable hace referencia a la proporción de energía que proviene de fuentes sostenibles y respetuosas con el medio ambiente en relación al total de energía consumida o utilizada. Este porcentaje generalmente se calcula para medir el impacto ambiental de la generación de energía y para evaluar el grado en que una región, empresa o individuo depende de fuentes renovables y de bajo impacto, como la energía solar, eólica, hidráulica, geotérmica, entre otras.</p> 
+  </header>
+
+  <!-- Formulario de cálculo -->
+  <h3>Calculadora de Energía</h3>
+  <form>
+      <label for="consumo">Consumo eléctrico del hogar (kWh):</label>
+      <input type="number" id="consumo" name="consumo" onchange="calcularPorcentajes()">
+  </form>
+
+  <table border="1" id="customers" style="margin-top: 20px;">
+      <thead>
+          <tr>
+              <th>Fuente de Energía</th>
+              <th>Porcentaje</th>
+              <th>Consumo en kWh</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>Energía Geotérmica</td>
+              <td>32.03%</td>
+              <td id="geotermica">0</td>
+          </tr>
+          <tr>
+              <td>Energía Solar</td>
+              <td>0.00000036%</td>
+              <td id="solar">0</td>
+          </tr>
+          <tr>
+              <td>Energía Eólica</td>
+              <td>0.00000007%</td>
+              <td id="eolica">0</td>
+          </tr>
+          <tr>
+              <td>Energía Hidráulica</td>
+              <td>67.96%</td>
+              <td id="hidraulica">0</td>
+          </tr>
+      </tbody>
+  </table>
+  <h3>¿como funciona la calculadora?</h3>
+  <p>Al ingresar el valor de consumo eléctrico en el formulario, el sistema calcula la cantidad de kWh que correspondería a cada fuente de energía según su porcentaje. Los cálculos son los siguientes:
+  <br>Consumo de energía geotérmica: consumo * 32.03%<br>
+    Consumo de energía solar: consumo * 0.00000036%<br>
+    Consumo de energía eólica: consumo * 0.00000007%<br>
+    Consumo de energía hidráulica: consumo * 67.96%<br>
+    Estos resultados se muestran en la tabla, donde cada fuente de energía tiene su propio valor calculado de consumo en kWh, basado en el total de consumo ingresado.</p>
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-16 w3-light-grey">
+    <h4>Talentotech 2</h4>
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">universidad de caldas</a></p>
+  </footer>
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+
+// Calcular porcentajes según el consumo
+function calcularPorcentajes() {
+    const consumo = parseFloat(document.getElementById('consumo').value) || 0;
+
+    // Porcentajes
+    const porcentajeGeotermica = 32.03 / 100;
+    const porcentajeSolar = 0.00000036 / 100;
+    const porcentajeEolica = 0.00000007 / 100;
+    const porcentajeHidraulica = 67.96 / 100;
+
+    // Cálculos
+    const consumoGeotermica = consumo * porcentajeGeotermica;
+    const consumoSolar = consumo * porcentajeSolar;
+    const consumoEolica = consumo * porcentajeEolica;
+    const consumoHidraulica = consumo * porcentajeHidraulica;
+
+    // Actualización de valores
+    document.getElementById('geotermica').textContent = consumoGeotermica.toFixed(6);
+    document.getElementById('solar').textContent = consumoSolar.toFixed(12);
+    document.getElementById('eolica').textContent = consumoEolica.toFixed(12);
+    document.getElementById('hidraulica').textContent = consumoHidraulica.toFixed(6);
+}
+</script>
+
+</body>
+</html>
+

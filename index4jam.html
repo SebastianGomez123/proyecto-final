@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html> lang="es"
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>W3.CSS Template</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Librería de Chart.js -->
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+</head>
+<body class="w3-light-grey">
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i> &nbsp;Menu</button>
+  <span class="w3-bar-item w3-right">Logo</span>
+</div>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container w3-row">
+    <div class="w3-col s4">
+      <img src="/w3images/avatar2.png" class="w3-circle w3-margin-right" style="width:46px">
+    </div>
+    <div class="w3-col s8 w3-bar">
+      <span>Welcome, <strong>Mike</strong></span><br>
+      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
+      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
+      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
+    </div>
+  </div>
+  <hr>
+  <div class="w3-container">
+    <h5>Dashboard</h5>
+  </div>
+  <div class="w3-bar-block">
+    <a href="index.html" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>&nbsp;Inicio</a><br>
+    <a href="index2.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>Datos historicos</a><br>
+    <a href="index3.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>Porcentaje <br>energia renovable</a><br>
+    <a href="index4.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i>Produccion por fuente</a><br>
+    <a href="index5.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-diamond fa-fw"></i>Participacion de energias renovables</a><br>
+    <a href="index6.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bell fa-fw"></i>tendencia en la capacidad instalada</a><br>
+    <a href="index7.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>Comparacion en energia renovable y conveniciona</a><br>
+    <a href="index8.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-history fa-fw"></i>Contactenos y Agradecimiento</a><br>
+  </div>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+
+  <!-- Header -->
+  <header class="w3-container" style="padding-top:22px">
+    <h5><b><i class="fa fa-dashboard"></i> Proyecto Energía Solar Talentotech2 Grupo FX4</b></h5>
+    <H1>Producción de Fuente</H1>
+  <p>La producción de fuente de energía se refiere a la cantidad de energía generada a partir de diversas fuentes de energía. Estas fuentes pueden ser tanto renovables como no renovables, y el término se utiliza para describir cómo se obtiene la energía en función de la fuente utilizada. La producción de energía se clasifica según el tipo de fuente de energía utilizada para generar electricidad o calor.
+    Tipos de fuentes de energía
+    Fuentes de energía renovable: Estas son fuentes de energía que se reponen de manera natural y sostenible, y que no se agotan con el uso. Además, suelen tener un menor impacto ambiental en comparación con las fuentes no renovables. <br> Ejemplos incluyen: <br>
+        Energía solar: Generada por la radiación solar. <br>
+    Energía eólica: Proveniente del viento. <br>
+    Energía hidráulica (hidroeléctrica): Proviene del movimiento del agua, como en las represas. <br>
+    Energía geotérmica: Se obtiene del calor almacenado en el interior de la Tierra. <br>
+    Biomasa: Utiliza materia orgánica para generar energía.</p>  
+  </header>
+
+  <!-- New Section for the Graph -->
+  <div class="w3-container w3-padding-32">
+    <h3>Gráfico de Producción de Energía</h3>
+    <canvas id="myChart" width="400" height="200"></canvas>
+  </div>
+     <p>Los datos que se presentan corresponden a los valores de producción de energía en porcentaje para cada fuente de energía. Estos valores son :<br>
+      Energía Solar: 70% <br>
+      Energía Eólica: 40% <br>
+      Energía Hidroeléctrica: 85% <br>
+      Energía Geotérmica: 55% <br> 
+      Energía Biomasa: 30%</p>
+
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-16 w3-light-grey">
+    <h4>Talentotech2</h4>
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">universidad de caldas</a></p>
+  </footer>
+
+</div> <!-- End page content -->
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+
+// Create the chart
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',  // Tipo de gráfico (barras)
+    data: {
+        labels: ['Energía Solar', 'Energía Eólica', 'Energía Hidroeléctrica', 'Energía Geotérmica', 'Energía Biomasa'], // Etiquetas para las barras
+        datasets: [{
+            label: 'Producción de Energía (%)',
+            data: [70, 40, 85, 55, 30],  // Datos de la producción de energía en porcentaje
+            backgroundColor: ['#FF5733', '#33FF57', '#3357FF', '#FF33B5', '#FF9233'],  // Colores de las barras
+            borderColor: ['#FF5733', '#33FF57', '#3357FF', '#FF33B5', '#FF9233'],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>
+
+</body>
+</html>
