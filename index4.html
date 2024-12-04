@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Librería de Chart.js -->
 
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
@@ -21,6 +22,19 @@ body {
   color: #ffffff; /* Color de texto blanco para mejor contraste */
 }
 
+/* Estilo para el cuadro de texto flotante */
+.floating-text {
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0px 4px 20px rgba(255, 165, 0, 0.8); /* Sombra color naranja */
+  padding: 10px; /* Espaciado interno */
+  margin-top: 10px; /* Espacio superior */
+  max-width: 800px; /* Ancho máximo */
+  margin-left: 400px; 
+  margin-right: auto;
+  font-size: 1.1em; /* Tamaño de fuente */
+  line-height: 1.8em; /* Altura de línea para mejorar la legibilidad */
+}
 
 </style>
 </head>
@@ -28,7 +42,7 @@ body {
 
 <!-- Top container -->
 <div class="w3-bar w3-top w3-yellow w3-large" style="z-index:4">
-  <img src="panel-solar.png" alt="Logo" style="height:40px; margin-left:1060px;">
+  <img src="panel-solar.png" alt="Logo" style="height:40px; margin-left:1045px;">
   <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();">
     <i class="fa fa-bars"></i> &nbsp;Menu
   </button>
@@ -80,6 +94,39 @@ body {
   </header>  
 </div>
 
+<!-- Cuadro de texto flotante debajo del título -->
+<div class="floating-text">  
+  <p>La producción de fuente de energía se refiere a la cantidad de energía generada a partir de diversas fuentes de energía. Estas fuentes pueden ser tanto renovables como no renovables, y el término se utiliza para describir cómo se obtiene la energía en función de la fuente utilizada. La producción de energía se clasifica según el tipo de fuente de energía utilizada para generar electricidad o calor.
+    Tipos de fuentes de energía
+    Fuentes de energía renovable: Estas son fuentes de energía que se reponen de manera natural y sostenible, y que no se agotan con el uso. Además, suelen tener un menor impacto ambiental en comparación con las fuentes no renovables. <br> Ejemplos incluyen: <br>
+        Energía solar: Generada por la radiación solar. <br>
+    Energía eólica: Proveniente del viento. <br>
+    Energía hidráulica (hidroeléctrica): Proviene del movimiento del agua, como en las represas. <br>
+    Energía geotérmica: Se obtiene del calor almacenado en el interior de la Tierra. <br>
+    Biomasa: Utiliza materia orgánica para generar energía.
+  </p>  
+</div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:250px;margin-top:10px;">
+  <!-- Header -->
+  <header class="w3-container" style="padding-top:22px">
+    <center><h3>Gráfico de Producción de Energía</h3></center>
+  </header>
+  <canvas id="myChart" width="300" height="100"></canvas>    
+</div>
+
+<!-- Cuadro de texto flotante debajo del título -->
+<div class="floating-text">  
+  <p>Los datos que se presentan corresponden a los valores de producción de energía en porcentaje para cada fuente de energía. Estos valores son :<br>
+    Energía Solar: 70% <br>
+    Energía Eólica: 40% <br>
+    Energía Hidroeléctrica: 85% <br>
+    Energía Geotérmica: 55% <br> 
+    Energía Biomasa: 30%
+  </p>
+</div>
+
 <script>
 function w3_open() {
   if (mySidebar.style.display === 'block') {
@@ -95,7 +142,31 @@ function w3_close() {
   mySidebar.style.display = "none";
   overlayBg.style.display = "none";
 }
-</script>
 
+// Create the chart
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',  // Tipo de gráfico (barras)
+    data: {
+        labels: ['Energía Solar', 'Energía Eólica', 'Energía Hidroeléctrica', 'Energía Geotérmica', 'Energía Biomasa'], // Etiquetas para las barras
+        datasets: [{
+            label: 'Producción de Energía (%)',
+            data: [70, 40, 85, 55, 30],  // Datos de la producción de energía en porcentaje
+            backgroundColor: ['#FF5733', '#33FF57', '#3357FF', '#FF33B5', '#FF9233'],  // Colores de las barras
+            borderColor: ['#FF5733', '#33FF57', '#3357FF', '#FF33B5', '#FF9233'],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+</script>
 </body>
 </html>
