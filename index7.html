@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://www.gstatic.com/charts/loader.js"></script>
 
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
@@ -21,6 +22,62 @@ body {
   color: #ffffff; /* Color de texto blanco para mejor contraste */
 }
 
+/* Estilo para el cuadro de texto flotante */
+.floating-text {
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0px 4px 20px rgba(255, 165, 0, 0.8); /* Sombra color naranja */
+  padding: 10px; /* Espaciado interno */
+  margin-top: 10px; /* Espacio superior */
+  max-width: 800px; /* Ancho máximo */
+  margin-left: 400px; 
+  margin-right: auto;
+  font-size: 1.1em; /* Tamaño de fuente */
+  line-height: 1.8em; /* Altura de línea para mejorar la legibilidad */
+}
+
+#chart-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 190px;
+  margin-left: 250px;
+  margin-top: 20px;   
+}
+
+#piechart_3d {
+  width: 200%;
+  max-width: 600px;
+  height: 190px;
+  border: 1px solid black;
+}
+
+/* Estilo para la tabla */
+.table-container {
+  max-width: 350px;
+  margin: 20px Auto;
+  margin-left: 630px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+th, td {
+  padding: 8px;
+  text-align: center;
+  background-color: #f2f2f2;
+  color: black;
+}
+
+th {
+  background-color: #f7d700;
+}
 
 </style>
 </head>
@@ -28,7 +85,7 @@ body {
 
 <!-- Top container -->
 <div class="w3-bar w3-top w3-yellow w3-large" style="z-index:4">
-  <img src="panel-solar.png" alt="Logo" style="height:40px; margin-left:1060px;">
+  <img src="panel-solar.png" alt="Logo" style="height:40px; margin-left:1045px;">
   <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();">
     <i class="fa fa-bars"></i> &nbsp;Menu
   </button>
@@ -53,10 +110,7 @@ body {
     </a><br>
     <a href="index4.html" class="w3-bar-item w3-button w3-padding">
       <i class="fa fa-industry fa-fw"></i>&nbsp;Producción por fuente
-    </a><br>
-    <a href="index5.html" class="w3-bar-item w3-button w3-padding">
-      <i class="fa fa-globe fa-fw"></i>&nbsp;Participación energías renovables
-    </a><br>
+    </a><br>   
     <a href="index6.html" class="w3-bar-item w3-button w3-padding">
       <i class="fa fa-line-chart fa-fw"></i>&nbsp;Tendencia capacidad instalada
     </a><br>
@@ -80,6 +134,84 @@ body {
   </header>  
 </div>
 
+<!-- Cuadro de texto flotante debajo del título -->
+<div class="floating-text">  
+  <p>
+    La comparación entre energía renovable y convencional se refiere al análisis de las diferencias y similitudes en cuanto a los orígenes, impacto ambiental, costos, sostenibilidad y eficiencia de ambas fuentes de energía. A continuación, se describen los aspectos clave para comprender cómo se comparan estas dos formas de generar energía: <br>
+      Orígenes de la Energía <br>
+      Energía Renovable: Proviene de fuentes naturales que se renuevan constantemente en el ciclo de la naturaleza, como el sol, viento, agua, biomasa y geotermia. <br>
+      Energía Solar: Captura la energía del sol a través de paneles solares. <br>
+      Energía Eólica: Utiliza el viento para generar electricidad mediante aerogeneradores. <br>
+      Energía Hidráulica: Aprovecha el movimiento del agua (ríos, presas) para producir electricidad. <br>
+      Biomasa: Se obtiene de materiales orgánicos como residuos agrícolas, forestales o desechos animales. <br>
+      Energía Geotérmica: Se obtiene del calor almacenado bajo la superficie terrestre. <br>
+      Energía Convencional (No Renovable): Proviene de recursos naturales finitos que no se regeneran rápidamente o que pueden agotarse, como los combustibles fósiles (carbón, petróleo, gas natural) y energía nuclear. <br>
+      Carbón: Es un combustible fósil utilizado principalmente en plantas termoeléctricas. <br>
+      Petróleo y Gas Natural: Se usan para generar electricidad, calefacción y en el transporte. <br>
+      Energía Nuclear: Se obtiene mediante la fisión nuclear de átomos de uranio, generando calor para producir electricidad.
+  <p>
+</div>
+
+<div class="w3-main" style="margin-left:250px;margin-top:43px;">
+  <!-- Header -->
+  <header class="w3-container" style="padding-top:22px">
+    <center><h2><strong>Gráfico de Consumo de Watts por Región</strong></h2></center>
+  </header>  
+</div>
+
+<section id="chart-section">
+  <div id="piechart_3d"></div>
+</section>
+
+<div class="w3-main" style="margin-left:250px;margin-top:43px;">
+  <!-- Header -->
+  <header class="w3-container" style="padding-top:22px">
+    <center><h2><strong>Consumo de Watts por Región</strong></h2></center>
+  </header>  
+</div>
+
+<div class="table-container">
+  <table id="customers" class="w3-table w3-bordered" id="customers" style="margin-top: 10px;">
+      <thead>
+        <tr>
+          <th>Región</th>
+          <th>Consumo Promedio (W)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Región Andina</td>
+          <td>1200 W</td>
+        </tr>
+        <tr>
+          <td>Caribe</td>
+          <td>1500 W</td>
+        </tr>
+        <tr>
+          <td>Pacífico</td>
+          <td>1300 W</td>
+        </tr>
+        <tr>
+          <td>Orinoquía</td>
+          <td>1100 W</td>
+        </tr>
+        <tr>
+          <td>Amazonía</td>
+          <td>1000 W</td>
+        </tr>
+      </tbody>
+  </table>
+</div>
+
+<div class="floating-text">  
+  <p>
+    La Unidad de Planeación Minero Energética (UPME) publicó un informe con las proyecciones de la demanda de energía eléctrica para los próximos 15 años en Colombia. Según el informe, se espera que el consumo energético anual en el país crezca entre un 1,30 % y un 3,09 % en los próximos años.
+  <p>
+</div>
+
+<br>
+<br>
+
 <script>
 function w3_open() {
   if (mySidebar.style.display === 'block') {
@@ -95,6 +227,28 @@ function w3_close() {
   mySidebar.style.display = "none";
   overlayBg.style.display = "none";
 }
+
+google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Región', 'Consumo de Watts'],
+          ['Región Caribe', 1500],
+          ['Región Andina', 1200],
+          ['Región de la Orinoquía', 1100],
+          ['Región de la Amazonía', 1000],
+          ['Región Pacífico', 1300]
+        ]);
+
+        var options = {
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+
 </script>
 
 </body>

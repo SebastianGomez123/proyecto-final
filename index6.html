@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
@@ -21,6 +22,26 @@ body {
   color: #ffffff; /* Color de texto blanco para mejor contraste */
 }
 
+/* Estilo para el cuadro de texto flotante */
+.floating-text {
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0px 4px 20px rgba(255, 165, 0, 0.8); /* Sombra color naranja */
+  padding: 10px; /* Espaciado interno */
+  margin-top: 10px; /* Espacio superior */
+  max-width: 800px; /* Ancho máximo */
+  margin-left: 400px; 
+  margin-right: auto;
+  font-size: 1.1em; /* Tamaño de fuente */
+  line-height: 1.8em; /* Altura de línea para mejorar la legibilidad */
+}
+
+.chart-container {
+  width: 80%;
+  margin: auto;
+  height: 400px;
+  margin-left: 400px; 
+}
 
 </style>
 </head>
@@ -28,7 +49,7 @@ body {
 
 <!-- Top container -->
 <div class="w3-bar w3-top w3-yellow w3-large" style="z-index:4">
-  <img src="panel-solar.png" alt="Logo" style="height:40px; margin-left:1060px;">
+  <img src="panel-solar.png" alt="Logo" style="height:40px; margin-left:1045px;">
   <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();">
     <i class="fa fa-bars"></i> &nbsp;Menu
   </button>
@@ -53,10 +74,7 @@ body {
     </a><br>
     <a href="index4.html" class="w3-bar-item w3-button w3-padding">
       <i class="fa fa-industry fa-fw"></i>&nbsp;Producción por fuente
-    </a><br>
-    <a href="index5.html" class="w3-bar-item w3-button w3-padding">
-      <i class="fa fa-globe fa-fw"></i>&nbsp;Participación energías renovables
-    </a><br>
+    </a><br>   
     <a href="index6.html" class="w3-bar-item w3-button w3-padding">
       <i class="fa fa-line-chart fa-fw"></i>&nbsp;Tendencia capacidad instalada
     </a><br>
@@ -80,6 +98,42 @@ body {
   </header>  
 </div>
 
+<!-- Cuadro de texto flotante debajo del título -->
+<div class="floating-text">  
+  <p>
+    Energías renovables y capacidad instalada: ¿cuál es la situación en el mundo?
+    Las energías renovables ya representan casi la mitad de la capacidad instalada en el mundo, y la solar y la eólica en particular, crecen a un ritmo constante a escala mundial, e incluso más rápido en el caso de Enel: noticias que auguran un futuro prometedor. 
+  <p>
+</div>
+
+<br>
+<br>
+
+<div class="chart-container">
+  <canvas id="energiaChart"></canvas>
+</div>
+
+<br>
+<br>
+
+<!-- Cuadro de texto flotante debajo del título -->
+<div class="floating-text">  
+  <p> Evolución de la Capacidad Instalada (2014-2024):
+    2014-2018: Comienzos Lentos
+    Durante los primeros años de la década, la capacidad instalada de energías renovables no convencionales era baja. Colombia aún estaba en las etapas iniciales de diversificación de su matriz energética. Sin embargo, se empezaron a instalar los primeros proyectos de energía solar fotovoltaica en el país, aunque la mayor parte de la generación seguía siendo de origen hidroeléctrico.
+    
+    2019-2020: Expansión Inicial
+    A partir de 2019, tras la subasta de energías renovables y la implementación de políticas pro-renovables, el sector de las energías renovables comenzó a despegar. Proyectos de energía solar fotovoltaica y eólica empezaron a desarrollarse en varias regiones del país, especialmente en La Guajira, que tiene un alto potencial eólico, y en la zona Caribe y Cesar para proyectos solares. <br>
+    
+    Energía solar fotovoltaica: <br> En 2020, la capacidad instalada de energía solar alcanzó aproximadamente los 400 MW. <br>
+    
+    Energía eólica: <br> Aunque Colombia tiene un enorme potencial eólico, la energía eólica comenzó a desarrollarse más lentamente, con algunos proyectos en zonas como La Guajira. Para 2020, la capacidad eólica instalada estaba en torno a los 100 MW.
+  </p>
+</div>
+
+<br>
+<br>
+
 <script>
 function w3_open() {
   if (mySidebar.style.display === 'block') {
@@ -95,6 +149,59 @@ function w3_close() {
   mySidebar.style.display = "none";
   overlayBg.style.display = "none";
 }
+
+// Datos de la capacidad instalada de energías renovables en Colombia (en MW)
+const labels = ['2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023'];
+            const data = {
+                labels: labels,
+                datasets: [{
+                    label: 'Capacidad Instalada (MW)',
+                    data: [200, 250, 300, 350, 450, 600, 800, 1100, 1500, 1800], // Datos ficticios
+                    backgroundColor: 'rgba(0, 123, 255, 0.2)',  // Color de fondo del área
+                    borderColor: 'rgba(0, 123, 255, 1)', // Color del borde
+                    borderWidth: 1,
+                    fill: true,  // Llenar el área bajo la curva
+                }]
+            };
+    
+            const config = {
+                type: 'line',  // Tipo de gráfico (línea)
+                data: data,
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(tooltipItem) {
+                                    return tooltipItem.raw + ' MW';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Capacidad (MW)'
+                            },
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Año'
+                            },
+                        }
+                    }
+                }
+            };
+    
+            // Crear la gráfica
+            const ctx = document.getElementById('energiaChart').getContext('2d');
+            const energiaChart = new Chart(ctx, config);
 </script>
 
 </body>
