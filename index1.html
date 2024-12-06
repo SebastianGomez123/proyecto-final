@@ -35,6 +35,45 @@ body {
   line-height: 1.8em; /* Altura de línea para mejorar la legibilidad */
 }
 
+/* Responsividad */
+@media (max-width: 768px) {
+  /* Ajusta la barra superior */
+  .w3-bar img {
+    margin-left: auto; /* Centra el logo */
+    margin-right: auto;
+    display: block;
+  }
+  .w3-bar .w3-bar-item {
+    font-size: 14px; /* Reduce tamaño del texto */
+  }
+
+  /* Ajusta el sidebar */
+  #mySidebar {
+    width: 100%; /* Sidebar ocupa toda la pantalla */
+    position: relative; /* Para que no se superponga al contenido */
+  }
+
+  /* Ajusta imagen centrada */
+  .center-image {
+    margin: 10px auto; /* Ajusta márgenes para centrar */
+    max-width: 90%; /* Imagen ocupa máximo 90% de la pantalla */
+  }
+
+  /* Ajusta cuadro de texto flotante */
+  .floating-text {
+    margin: 10px auto; /* Ajusta márgenes para centrar */
+    max-width: 90%; /* Ancho máximo del cuadro */
+    font-size: 1em; /* Reduce el tamaño de fuente */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Ajusta el título */
+  h1 {
+    font-size: 1.5em; /* Reduce tamaño del título */
+  }
+}
+
 </style>
 </head>
 <body class="w3-white">
