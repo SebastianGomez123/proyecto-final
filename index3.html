@@ -35,28 +35,63 @@ body {
   line-height: 1.8em; /* Altura de línea para mejorar la legibilidad */
 }
 
+/* Estilo base de la tabla */
 #customers {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
-  width: 60%;
-  margin-left: 400px; 
+  width: 50% center; /* La tabla ocupa el 90% del ancho de su contenedor */
+  margin: 20px auto; /* Centrado automático */
 }
 
 #customers td, #customers th {
   border: 1px solid #ddd;
   padding: 8px;
+  text-align: center; /* Alineación centrada del texto */
 }
 
-#customers tr:nth-child(even){background-color: #f2f2f2;}
+#customers tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
 
-#customers tr:hover {background-color: #ddd;}
+#customers tr:hover {
+  background-color: #ddd;
+}
 
 #customers th {
   padding-top: 12px;
   padding-bottom: 12px;
-  text-align: left;
   background-color: rgba(165, 165, 18, 0.664);
   color: white;
+}
+
+/* Responsividad: Ajuste de tabla en pantallas pequeñas */
+@media (max-width: 768px) {
+  #customers {
+    font-size: 0.9em; /* Reducción del tamaño de fuente */
+    width: 100%; /* La tabla ocupa el 100% del ancho del dispositivo */
+  }
+
+  #customers td, #customers th {
+    padding: 6px; /* Reducción de padding */
+  }
+}
+
+@media (max-width: 480px) {
+  #customers {
+    font-size: 0.8em; /* Tamaño de fuente más pequeño para móviles */
+  }
+
+  #customers th, #customers td {
+    padding: 4px; /* Espaciado mínimo */
+  }
+}
+
+/* Responsividad: cuando la pantalla sea menor a 768px */
+@media (max-width: 768px) {
+  .customers {
+    margin-left: 20px; /* Ajusta el margen izquierdo para pantallas pequeñas */
+    max-width: 100%; /* La tabla se adapta al 100% del ancho */
+  }
 }
 
 /* Responsividad */
@@ -170,37 +205,41 @@ body {
 </form>
 </center>
 
-<table border="1" id="customers" style="margin-top: 20px;">
-  <thead>
+<div class="customers w3-main">
+  <center>
+  <table id="customers">
+    <thead>
       <tr>
-          <th>Fuente de Energía</th>
-          <th>Porcentaje</th>
-          <th>Consumo en kWh</th>
+        <th>Fuente de Energía</th>
+        <th>Porcentaje</th>
+        <th>Consumo en kWh</th>
       </tr>
-  </thead>
-  <tbody>
+    </thead>
+    <tbody>
       <tr>
-          <td>Energía Geotérmica</td>
-          <td>32.03%</td>
-          <td id="geotermica">0</td>
-      </tr>
-      <tr>
-          <td>Energía Solar</td>
-          <td>0.00000036%</td>
-          <td id="solar">0</td>
+        <td>Energía Geotérmica</td>
+        <td>32.03%</td>
+        <td id="geotermica">0</td>
       </tr>
       <tr>
-          <td>Energía Eólica</td>
-          <td>0.00000007%</td>
-          <td id="eolica">0</td>
+        <td>Energía Solar</td>
+        <td>0.00000036%</td>
+        <td id="solar">0</td>
       </tr>
       <tr>
-          <td>Energía Hidráulica</td>
-          <td>67.96%</td>
-          <td id="hidraulica">0</td>
+        <td>Energía Eólica</td>
+        <td>0.00000007%</td>
+        <td id="eolica">0</td>
       </tr>
-  </tbody>
-</table>
+      <tr>
+        <td>Energía Hidráulica</td>
+        <td>67.96%</td>
+        <td id="hidraulica">0</td>
+      </tr>
+    </tbody>
+  </table>
+</center>
+</div>
 
 <div class="w3-main" style="margin-left:250px;margin-top:43px;">
   <!-- Header -->
